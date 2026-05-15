@@ -1,0 +1,28 @@
+﻿<Window x:Class="ErpDotNet.Wpf.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ErpDotNet.Wpf"
+        xmlns:vm="clr-namespace:ErpDotNet.Wpf.ViewModels"
+        xmlns:texts="clr-namespace:ErpDotNet.Wpf.Texts"
+        mc:Ignorable="d"
+        Title="{x:Static texts:MainViewTexts.View_Title}" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Button Content="Create Database" Margin="5" Padding="5" Command="{Binding CreateDatabaseCommand}" />
+            </StackPanel>
+        </StackPanel>
+        <TextBox Grid.Row="1" Text="{Binding StatusMessage, UpdateSourceTrigger=PropertyChanged}" Padding="5" IsEnabled="False"/>
+    </Grid>
+</Window>
