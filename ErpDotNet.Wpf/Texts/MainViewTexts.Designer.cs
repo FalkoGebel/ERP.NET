@@ -72,9 +72,18 @@ namespace ErpDotNet.Wpf.Texts {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die SQLite Database (*.db)|*.db ähnelt.
         /// </summary>
-        public static string ViewModel_SaveFileDialog_Filter {
+        public static string ViewModel_FileDialog_Filter {
             get {
-                return ResourceManager.GetString("ViewModel_SaveFileDialog_Filter", resourceCulture);
+                return ResourceManager.GetString("ViewModel_FileDialog_Filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Choose database file to open ähnelt.
+        /// </summary>
+        public static string ViewModel_OpenFileDialog_Title {
+            get {
+                return ResourceManager.GetString("ViewModel_OpenFileDialog_Title", resourceCulture);
             }
         }
         
@@ -97,11 +106,38 @@ namespace ErpDotNet.Wpf.Texts {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Database NOT created.  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Database NOT created ähnelt.
         /// </summary>
         public static string ViewModel_StatusMessage_FileNotCreated {
             get {
                 return ResourceManager.GetString("ViewModel_StatusMessage_FileNotCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Database file does not exist at  ähnelt.
+        /// </summary>
+        public static string ViewModel_StatusMessage_FileNotOpened {
+            get {
+                return ResourceManager.GetString("ViewModel_StatusMessage_FileNotOpened", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Database opened at  ähnelt.
+        /// </summary>
+        public static string ViewModel_StatusMessage_FileOpened {
+            get {
+                return ResourceManager.GetString("ViewModel_StatusMessage_FileOpened", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No open database to use ähnelt.
+        /// </summary>
+        public static string ViewModel_StatusMessage_NoDatabase {
+            get {
+                return ResourceManager.GetString("ViewModel_StatusMessage_NoDatabase", resourceCulture);
             }
         }
         

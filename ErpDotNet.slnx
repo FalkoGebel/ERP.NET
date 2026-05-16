@@ -3,7 +3,7 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="ErpDotNet.Logic/ErpDotNet.Logic.csproj" Id="178bdf77-3f75-439f-968c-b627b9a15633" />
-  <Project Path="ErpDotNet.Sqlite/ErpDotNet.Sqlite.csproj" />
+  <Project Path="ErpDotNet.Repository/ErpDotNet.Repository.csproj" Id="c1f8e4d4-1c31-40e0-856c-57f55d8e2028" />
   <Project Path="ErpDotNet.Tests/ErpDotNet.Tests.csproj" Id="3cfa3204-7694-4dc3-a010-77f3f68ba107" />
   <Project Path="ErpDotNet.Wpf/ErpDotNet.Wpf.csproj" Id="e0debf21-c103-4654-a87b-85eb4cdf8b4e" />
 </Solution>
