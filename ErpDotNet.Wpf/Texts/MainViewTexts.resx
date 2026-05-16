@@ -120,19 +120,31 @@
   <data name="ViewModel_SaveFileDialog_Title" xml:space="preserve">
     <value>Choose folder and name for new database</value>
   </data>
-  <data name="ViewModel_SaveFileDialog_Filter" xml:space="preserve">
-    <value>SQLite Database (*.db)|*.db</value>
+  <data name="ViewModel_OpenFileDialog_Title" xml:space="preserve">
+    <value>Choose database file to open</value>
   </data>
-  <data name="ViewModel_StatusMessage_FileCreated" xml:space="preserve">
-    <value>Database created at </value>
+  <data name="ViewModel_FileDialog_Filter" xml:space="preserve">
+    <value>SQLite Database (*.db)|*.db</value>
   </data>
   <data name="ViewModel_StatusMessage_Welcome" xml:space="preserve">
     <value>Welcome to ERP.NET!</value>
   </data>
+  <data name="ViewModel_StatusMessage_NoDatabase" xml:space="preserve">
+    <value>No open database to use</value>
+  </data>
   <data name="ViewModel_StatusMessage_FileNotCreated" xml:space="preserve">
-    <value>Database NOT created. </value>
+    <value>Database NOT created</value>
   </data>
   <data name="View_Title" xml:space="preserve">
     <value>ERP.NET</value>
+  </data>
+  <data name="ViewModel_StatusMessage_FileCreated" xml:space="preserve">
+    <value>Database created at </value>
+  </data>
+  <data name="ViewModel_StatusMessage_FileOpened" xml:space="preserve">
+    <value>Database opened at </value>
+  </data>
+  <data name="ViewModel_StatusMessage_FileNotOpened" xml:space="preserve">
+    <value>Database file does not exist at </value>
   </data>
 </root>

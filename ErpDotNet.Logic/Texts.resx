@@ -120,6 +120,12 @@
   <data name="DatabaseAdministration_CreateSqliteDatabase_MissingFilePath" xml:space="preserve">
     <value>File path is missing.</value>
   </data>
+  <data name="DatabaseAdministration_OpenSqliteDatabase_MissingFilePath" xml:space="preserve">
+    <value>File path is missing.</value>
+  </data>
+  <data name="DatabaseAdministration_OpenSqliteDatabase_InvalidFilePath" xml:space="preserve">
+    <value>File does not exist.</value>
+  </data>
   <data name="DatabaseAdministration_CreateSqliteDatabase_FileExists" xml:space="preserve">
     <value>File already exists.</value>
   </data>

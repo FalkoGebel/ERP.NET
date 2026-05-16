@@ -77,5 +77,23 @@ namespace ErpDotNet.Logic {
                 return ResourceManager.GetString("DatabaseAdministration_CreateSqliteDatabase_MissingFilePath", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die File does not exist. ähnelt.
+        /// </summary>
+        internal static string DatabaseAdministration_OpenSqliteDatabase_InvalidFilePath {
+            get {
+                return ResourceManager.GetString("DatabaseAdministration_OpenSqliteDatabase_InvalidFilePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die File path is missing. ähnelt.
+        /// </summary>
+        internal static string DatabaseAdministration_OpenSqliteDatabase_MissingFilePath {
+            get {
+                return ResourceManager.GetString("DatabaseAdministration_OpenSqliteDatabase_MissingFilePath", resourceCulture);
+            }
+        }
     }
 }

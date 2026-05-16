@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace ErpDotNet.Sqlite
+namespace ErpDotNet.Logic
+
 {
-    public class ErpContext(string dbPath) : DbContext
+    public class SqliteContext(string dbPath) : ErpContext
     {
         public string DbPath { get; set; } = dbPath;
 
