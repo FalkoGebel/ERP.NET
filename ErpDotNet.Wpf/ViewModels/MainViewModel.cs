@@ -2,7 +2,6 @@
 using CommunityToolkit.Mvvm.Input;
 using ErpDotNet.Logic;
 using ErpDotNet.Repository;
-using ErpDotNet.Wpf.Texts;
 using Microsoft.Win32;
 
 namespace ErpDotNet.Wpf.ViewModels
@@ -15,15 +14,15 @@ namespace ErpDotNet.Wpf.ViewModels
         public partial List<Item> Items { get; set; } = [];
 
         [ObservableProperty]
-        public partial string StatusMessage { get; set; } = MainViewTexts.ViewModel_StatusMessage_Welcome;
+        public partial string StatusMessage { get; set; } = Texts.MainView.ViewModel_StatusMessage_Welcome;
 
         [RelayCommand]
         public void CreateDatabase()
         {
             var saveFileDialog = new SaveFileDialog
             {
-                Title = MainViewTexts.ViewModel_SaveFileDialog_Title,
-                Filter = MainViewTexts.ViewModel_FileDialog_Filter
+                Title = Texts.MainView.ViewModel_SaveFileDialog_Title,
+                Filter = Texts.MainView.ViewModel_FileDialog_Filter
             };
 
             if (saveFileDialog.ShowDialog() == true)
@@ -31,11 +30,11 @@ namespace ErpDotNet.Wpf.ViewModels
                 try
                 {
                     _context = DatabaseAdministration.CreateSqliteDatabase(saveFileDialog.FileName);
-                    StatusMessage = MainViewTexts.ViewModel_StatusMessage_FileCreated + $"{saveFileDialog.FileName}";
+                    StatusMessage = Texts.MainView.ViewModel_StatusMessage_FileCreated + $"{saveFileDialog.FileName}";
                 }
                 catch (ArgumentException ex)
                 {
-                    StatusMessage = MainViewTexts.ViewModel_StatusMessage_FileNotCreated + $"{ex.Message}";
+                    StatusMessage = Texts.MainView.ViewModel_StatusMessage_FileNotCreated + $"{ex.Message}";
                 }
             }
         }
@@ -54,8 +53,8 @@ namespace ErpDotNet.Wpf.ViewModels
         {
             var openFileDialog = new OpenFileDialog
             {
-                Title = MainViewTexts.ViewModel_OpenFileDialog_Title,
-                Filter = MainViewTexts.ViewModel_FileDialog_Filter
+                Title = Texts.MainView.ViewModel_OpenFileDialog_Title,
+                Filter = Texts.MainView.ViewModel_FileDialog_Filter
             };
 
             if (openFileDialog.ShowDialog() == true)
@@ -63,11 +62,11 @@ namespace ErpDotNet.Wpf.ViewModels
                 try
                 {
                     _context = DatabaseAdministration.OpenSqliteDatabase(openFileDialog.FileName);
-                    StatusMessage = MainViewTexts.ViewModel_StatusMessage_FileOpened + $"{openFileDialog.FileName}";
+                    StatusMessage = Texts.MainView.ViewModel_StatusMessage_FileOpened + $"{openFileDialog.FileName}";
                 }
                 catch (ArgumentException ex)
                 {
-                    StatusMessage = MainViewTexts.ViewModel_StatusMessage_FileNotOpened + $"{ex.Message}";
+                    StatusMessage = Texts.MainView.ViewModel_StatusMessage_FileNotOpened + $"{ex.Message}";
                 }
             }
         }
@@ -76,7 +75,7 @@ namespace ErpDotNet.Wpf.ViewModels
         {
             if (_context == null)
             {
-                StatusMessage = MainViewTexts.ViewModel_StatusMessage_NoDatabase;
+                StatusMessage = Texts.MainView.ViewModel_StatusMessage_NoDatabase;
                 return false;
             }
 

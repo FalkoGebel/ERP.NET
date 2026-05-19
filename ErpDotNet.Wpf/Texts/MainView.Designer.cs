@@ -22,14 +22,14 @@ namespace ErpDotNet.Wpf.Texts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class MainViewTexts {
+    public class MainView {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal MainViewTexts() {
+        internal MainView() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace ErpDotNet.Wpf.Texts {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ErpDotNet.Wpf.Texts.MainViewTexts", typeof(MainViewTexts).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ErpDotNet.Wpf.Texts.MainView", typeof(MainView).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

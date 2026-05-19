@@ -6,8 +6,11 @@
         xmlns:local="clr-namespace:ErpDotNet.Wpf"
         xmlns:vm="clr-namespace:ErpDotNet.Wpf.ViewModels"
         xmlns:texts="clr-namespace:ErpDotNet.Wpf.Texts"
+        xmlns:lists="clr-namespace:ErpDotNet.Wpf.UserControls.Lists"
         mc:Ignorable="d"
-        Title="{x:Static texts:MainViewTexts.View_Title}" Height="450" Width="800">
+        Title="{x:Static texts:MainView.View_Title}"
+        d:DesignHeight="450" d:DesignWidth="800"
+        WindowState="Maximized">
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
@@ -23,17 +26,20 @@
             <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <Button Content="Create Database" Margin="5" Padding="5" Command="{Binding CreateDatabaseCommand}" />
                 <Button Content="Open Database" Margin="5" Padding="5" Command="{Binding OpenDatabaseCommand}" />
-                <Button Content="Get Items" Margin="5" Padding="5" Command="{Binding GetItemsFromDatabaseCommand}" />
             </StackPanel>
         </StackPanel>
-        <ListView Grid.Row="1" ItemsSource="{Binding Items}" Margin="5">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Number" DisplayMemberBinding="{Binding Number}" Width="50"/>
-                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="200"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Button Content="Items" Margin="5" Padding="5" Command="{Binding GetItemsFromDatabaseCommand}" />
+            </StackPanel>
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <lists:ItemList Items="{Binding Items}" Grid.Column="2" HorizontalContentAlignment="Stretch"/>
+        </Grid>
         <TextBox Grid.Row="2" Text="{Binding StatusMessage, UpdateSourceTrigger=PropertyChanged}" Padding="5" IsEnabled="False"/>
     </Grid>
 </Window>
