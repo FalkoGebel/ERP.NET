@@ -21,9 +21,7 @@ namespace ErpDotNet.Tests
         public void Create_SQLite_Database_With_Valid_File_Path_And_Database_File_Exists()
         {
             // Arrange
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            string filePath = Path.Join(path, "sqlite1.db");
+            string filePath = Path.Join(Environment.ExpandEnvironmentVariables("%localappdata%"), "sqlite1.db");
 
             if (File.Exists(filePath))
                 File.Delete(filePath);
@@ -42,9 +40,7 @@ namespace ErpDotNet.Tests
         public void Create_SQLite_Database_With_File_Path_For_Existing_File_And_Get_Exception()
         {
             // Arrange
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            string filePath = Path.Join(path, "sqlite2.db");
+            string filePath = Path.Join(Environment.ExpandEnvironmentVariables("%localappdata%"), "sqlite2.db");
 
             if (File.Exists(filePath))
                 File.Delete(filePath);
@@ -75,9 +71,7 @@ namespace ErpDotNet.Tests
         public void Open_Not_Existing_SQLite_Database_And_Get_Exception()
         {
             // Arrange
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            string filePath = Path.Join(path, "sqlite3.db");
+            string filePath = Path.Join(Environment.ExpandEnvironmentVariables("%localappdata%"), "sqlite3.db");
 
             // Act
             Action act = () => DatabaseAdministration.OpenSqliteDatabase(filePath);
@@ -90,9 +84,7 @@ namespace ErpDotNet.Tests
         public void Open_Existing_SQLite_Database_And_Get_Open_Connection()
         {
             // Arrange
-            var folder = Environment.SpecialFolder.LocalApplicationData;
-            var path = Environment.GetFolderPath(folder);
-            string filePath = Path.Join(path, "sqlite4.db");
+            string filePath = Path.Join(Environment.ExpandEnvironmentVariables("%localappdata%"), "sqlite4.db");
 
             if (File.Exists(filePath))
                 File.Delete(filePath);
