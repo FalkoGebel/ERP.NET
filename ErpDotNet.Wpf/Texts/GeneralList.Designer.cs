@@ -22,14 +22,14 @@ namespace ErpDotNet.Wpf.Texts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Item {
+    public class GeneralList {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Item() {
+        internal GeneralList() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace ErpDotNet.Wpf.Texts {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ErpDotNet.Wpf.Texts.Item", typeof(Item).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ErpDotNet.Wpf.Texts.GeneralList", typeof(GeneralList).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,18 +63,27 @@ namespace ErpDotNet.Wpf.Texts {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Description ähnelt.
         /// </summary>
-        public static string Description {
+        public static string ItemDescription {
             get {
-                return ResourceManager.GetString("Description", resourceCulture);
+                return ResourceManager.GetString("ItemDescription", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Number ähnelt.
         /// </summary>
-        public static string Number {
+        public static string ItemNumber {
             get {
-                return ResourceManager.GetString("Number", resourceCulture);
+                return ResourceManager.GetString("ItemNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Header missing -&gt;  ähnelt.
+        /// </summary>
+        public static string MissingHeader {
+            get {
+                return ResourceManager.GetString("MissingHeader", resourceCulture);
             }
         }
     }
