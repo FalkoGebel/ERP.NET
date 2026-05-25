@@ -17,22 +17,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Texts\Item.Designer.cs">
+    <Compile Update="Texts\GeneralList.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Item.resx</DependentUpon>
+      <DependentUpon>GeneralList.resx</DependentUpon>
     </Compile>
     <Compile Update="Texts\MainView.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>MainView.resx</DependentUpon>
     </Compile>
+    <Compile Update="UserControls\Lists\GeneralList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Texts\Item.resx">
+    <EmbeddedResource Update="Texts\GeneralList.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Item.Designer.cs</LastGenOutput>
+      <LastGenOutput>GeneralList.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Texts\MainView.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

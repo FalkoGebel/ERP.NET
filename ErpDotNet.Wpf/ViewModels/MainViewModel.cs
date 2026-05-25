@@ -11,11 +11,22 @@ namespace ErpDotNet.Wpf.ViewModels
         private SqliteContext? _context;
 
         [ObservableProperty]
-        public partial List<Item> Items { get; set; } = [];
+        public partial Type ListType { get; set; }
+
+        [ObservableProperty]
+        public partial List<object> Lines { get; set; } = [];
+
+        [ObservableProperty]
+        public partial bool ItemListVisible { get; set; }
 
         [ObservableProperty]
         public partial string StatusMessage { get; set; } = Texts.MainView.ViewModel_StatusMessage_Welcome;
 
+        /// <summary>
+        /// Opens a save file dialog to create a new SQLite database. If the database is created successfully,
+        /// the context is initialized and a success message is set in the status message. If there is an error during
+        /// creation, an error message is set in the status message.
+        /// </summary>
         [RelayCommand]
         public void CreateDatabase()
         {
@@ -39,15 +50,24 @@ namespace ErpDotNet.Wpf.ViewModels
             }
         }
 
+        /// <summary>
+        /// Loads items from the database into the Items property and updates the Lines property to display them.
+        /// If the database context is not set, an error message is set in the status message.
+        /// </summary>
         [RelayCommand]
         public void GetItemsFromDatabase()
         {
             if (!CheckContextAndSetStatusMessage())
                 return;
 
-            Items = [.. _context!.Item];
+            ListType = typeof(Item);
+            Lines = [.. _context!.Item.Select(i => (object)i)];
+            ItemListVisible = true;
         }
 
+        /// <summary>
+        /// Opens an existing SQLite database file and initializes the context. If the file cannot be opened, an error message is set in the status message.
+        /// </summary>
         [RelayCommand]
         public void OpenDatabase()
         {

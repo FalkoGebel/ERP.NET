@@ -14,7 +14,9 @@
     <Window.DataContext>
         <vm:MainViewModel />
     </Window.DataContext>
-    
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -38,7 +40,11 @@
                 <Button Content="Items" Margin="5" Padding="5" Command="{Binding GetItemsFromDatabaseCommand}" />
             </StackPanel>
             <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-            <lists:ItemList Items="{Binding Items}" Grid.Column="2" HorizontalContentAlignment="Stretch"/>
+            <lists:GeneralList Grid.Column="2"
+                               Type="{Binding ListType}"
+                               Lines="{Binding Lines}"
+                               Visibility="{Binding ItemListVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               HorizontalContentAlignment="Stretch" />
         </Grid>
         <TextBox Grid.Row="2" Text="{Binding StatusMessage, UpdateSourceTrigger=PropertyChanged}" Padding="5" IsEnabled="False"/>
     </Grid>
