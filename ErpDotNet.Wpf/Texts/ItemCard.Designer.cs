@@ -22,14 +22,14 @@ namespace ErpDotNet.Wpf.Texts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class GeneralList {
+    public class ItemCard {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal GeneralList() {
+        internal ItemCard() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace ErpDotNet.Wpf.Texts {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ErpDotNet.Wpf.Texts.GeneralList", typeof(GeneralList).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ErpDotNet.Wpf.Texts.ItemCard", typeof(ItemCard).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,38 +61,38 @@ namespace ErpDotNet.Wpf.Texts {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Card ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Cancel ähnelt.
         /// </summary>
-        public static string CardButtonContent {
+        public static string CancelButtonContent {
             get {
-                return ResourceManager.GetString("CardButtonContent", resourceCulture);
+                return ResourceManager.GetString("CancelButtonContent", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Description ähnelt.
         /// </summary>
-        public static string ItemDescription {
+        public static string ItemDescriptionLabelContent {
             get {
-                return ResourceManager.GetString("ItemDescription", resourceCulture);
+                return ResourceManager.GetString("ItemDescriptionLabelContent", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Number ähnelt.
         /// </summary>
-        public static string ItemNumber {
+        public static string ItemNumberLabelContent {
             get {
-                return ResourceManager.GetString("ItemNumber", resourceCulture);
+                return ResourceManager.GetString("ItemNumberLabelContent", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Header missing -&gt;  ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Ok ähnelt.
         /// </summary>
-        public static string MissingHeader {
+        public static string OkButtonContent {
             get {
-                return ResourceManager.GetString("MissingHeader", resourceCulture);
+                return ResourceManager.GetString("OkButtonContent", resourceCulture);
             }
         }
     }

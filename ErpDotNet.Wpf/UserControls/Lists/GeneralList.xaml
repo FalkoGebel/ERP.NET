@@ -7,12 +7,27 @@
              xmlns:texts="clr-namespace:ErpDotNet.Wpf.Texts"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             d:DataContext="{d:DesignInstance Type=local:GeneralList, IsDesignTimeCreatable=True}">
+             d:DataContext="{d:DesignInstance Type=local:GeneralList, IsDesignTimeCreatable=True}"
+             x:Name="root">
     <Grid>
-        <ListView x:Name="listView"
-                  ItemsSource="{Binding Lines}"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Button Content="{x:Static texts:GeneralList.CardButtonContent}" Margin="5" Padding="5">
+                <Button.InputBindings>
+                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenCard, ElementName=root}" />
+                </Button.InputBindings>
+            </Button>
+        </StackPanel>
+        <ListView Grid.Row="1"
+                  x:Name="listView"
+                  ItemsSource="{Binding Lines, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ElementName=root}"
+                  SelectedIndex="{Binding SelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ElementName=root}"
                   Visibility="{Binding ListVisibility}"
                   IsVisibleChanged="ListView_IsVisibleChanged" 
-                  Margin="5" />
+                  Margin="5">
+        </ListView>
     </Grid>
 </UserControl>

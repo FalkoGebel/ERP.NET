@@ -133,11 +133,29 @@ namespace ErpDotNet.Wpf.Texts {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No card available for list type &quot;{0: list type}&quot; ähnelt.
+        /// </summary>
+        public static string ViewModel_StatusMessage_NoCardForListType {
+            get {
+                return ResourceManager.GetString("ViewModel_StatusMessage_NoCardForListType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die No open database to use ähnelt.
         /// </summary>
         public static string ViewModel_StatusMessage_NoDatabase {
             get {
                 return ResourceManager.GetString("ViewModel_StatusMessage_NoDatabase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No item selected to show in card ähnelt.
+        /// </summary>
+        public static string ViewModel_StatusMessage_NoItemSelectedForCard {
+            get {
+                return ResourceManager.GetString("ViewModel_StatusMessage_NoItemSelectedForCard", resourceCulture);
             }
         }
         

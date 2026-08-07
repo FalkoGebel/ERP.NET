@@ -7,6 +7,7 @@
         xmlns:vm="clr-namespace:ErpDotNet.Wpf.ViewModels"
         xmlns:texts="clr-namespace:ErpDotNet.Wpf.Texts"
         xmlns:lists="clr-namespace:ErpDotNet.Wpf.UserControls.Lists"
+        xmlns:cards="clr-namespace:ErpDotNet.Wpf.UserControls.Cards"
         mc:Ignorable="d"
         Title="{x:Static texts:MainView.View_Title}"
         d:DesignHeight="450" d:DesignWidth="800"
@@ -43,8 +44,17 @@
             <lists:GeneralList Grid.Column="2"
                                Type="{Binding ListType}"
                                Lines="{Binding Lines}"
-                               Visibility="{Binding ItemListVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
-                               HorizontalContentAlignment="Stretch" />
+                               SelectedIndex="{Binding GeneralListSelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                               Visibility="{Binding GeneralListVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               HorizontalContentAlignment="Stretch"
+                               OpenCard="{Binding OpenCardCommand}"/>
+            <cards:ItemCard Grid.Column="2"
+                               Item="{Binding CurrentItem}"
+                               Visibility="{Binding ItemCardVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                               HorizontalContentAlignment="Stretch"
+                               Ok="{Binding ItemCardOkCommand}"
+                               Cancel="{Binding ItemCardCancelCommand}"/>
+
         </Grid>
         <TextBox Grid.Row="2" Text="{Binding StatusMessage, UpdateSourceTrigger=PropertyChanged}" Padding="5" IsEnabled="False"/>
     </Grid>

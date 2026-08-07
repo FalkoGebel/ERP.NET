@@ -17,7 +17,16 @@ namespace ErpDotNet.Wpf.ViewModels
         public partial List<object> Lines { get; set; } = [];
 
         [ObservableProperty]
-        public partial bool ItemListVisible { get; set; }
+        public partial Item? CurrentItem { get; set; }
+
+        [ObservableProperty]
+        public partial bool GeneralListVisible { get; set; }
+
+        [ObservableProperty]
+        public partial int GeneralListSelectedIndex { get; set; }
+
+        [ObservableProperty]
+        public partial bool ItemCardVisible { get; set; }
 
         [ObservableProperty]
         public partial string StatusMessage { get; set; } = Texts.MainView.ViewModel_StatusMessage_Welcome;
@@ -62,7 +71,7 @@ namespace ErpDotNet.Wpf.ViewModels
 
             ListType = typeof(Item);
             Lines = [.. _context!.Item.Select(i => (object)i)];
-            ItemListVisible = true;
+            GeneralListVisible = true;
         }
 
         /// <summary>
@@ -89,6 +98,46 @@ namespace ErpDotNet.Wpf.ViewModels
                     StatusMessage = Texts.MainView.ViewModel_StatusMessage_FileNotOpened + $"{ex.Message}";
                 }
             }
+        }
+
+        [RelayCommand]
+        public void OpenCard()
+        {
+            if (ListType.Name == nameof(Item))
+            {
+                if (GeneralListSelectedIndex >= 0)
+                {
+                    CurrentItem = (Item)Lines[GeneralListSelectedIndex];
+                    GeneralListVisible = false;
+                    ItemCardVisible = true;
+                }
+                else
+                {
+                    StatusMessage = Texts.MainView.ViewModel_StatusMessage_NoItemSelectedForCard;
+                }
+            }
+            else
+            {
+                StatusMessage = string.Format(Texts.MainView.ViewModel_StatusMessage_NoCardForListType, ListType.Name);
+            }
+        }
+
+        [RelayCommand]
+        public void ItemCardOk()
+        {
+            _context!.SaveChanges();
+            CloseItemCard();
+        }
+
+        [RelayCommand]
+        public void ItemCardCancel() => CloseItemCard();
+
+        private void CloseItemCard()
+        {
+            _context!.Entry(CurrentItem!).Reload();
+            CurrentItem = null;
+            ItemCardVisible = false;
+            GetItemsFromDatabase();
         }
 
         private bool CheckContextAndSetStatusMessage()
