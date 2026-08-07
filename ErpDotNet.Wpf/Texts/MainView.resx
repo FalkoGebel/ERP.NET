@@ -147,4 +147,10 @@
   <data name="ViewModel_StatusMessage_FileNotOpened" xml:space="preserve">
     <value>Database file does not exist at </value>
   </data>
+  <data name="ViewModel_StatusMessage_NoItemSelectedForCard" xml:space="preserve">
+    <value>No item selected to show in card</value>
+  </data>
+  <data name="ViewModel_StatusMessage_NoCardForListType" xml:space="preserve">
+    <value>No card available for list type "{0: list type}"</value>
+  </data>
 </root>

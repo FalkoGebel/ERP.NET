@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Resources;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace ErpDotNet.Wpf.UserControls.Lists
 {
@@ -12,7 +13,7 @@ namespace ErpDotNet.Wpf.UserControls.Lists
     /// </summary>
     public partial class GeneralList : UserControl
     {
-        private ResourceSet? _resourceSet;
+        private readonly ResourceSet? _resourceSet;
 
         public GeneralList()
         {
@@ -47,6 +48,18 @@ namespace ErpDotNet.Wpf.UserControls.Lists
         }
 
         /// <summary>
+        /// The index of the currently selected item in the ListView.
+        /// </summary>
+        public int SelectedIndex
+        {
+            get => (int)GetValue(SelectedIndexProperty);
+            set
+            {
+                SetValue(SelectedIndexProperty, value);
+            }
+        }
+
+        /// <summary>
         /// The visibility of the ListView.
         /// </summary>
         public Visibility ListVisibility
@@ -66,6 +79,10 @@ namespace ErpDotNet.Wpf.UserControls.Lists
         public static readonly DependencyProperty LinesProperty = DependencyProperty.Register("Lines",
                                                                                               typeof(List<object>),
                                                                                               typeof(GeneralList));
+
+        public static readonly DependencyProperty SelectedIndexProperty = DependencyProperty.Register("SelectedIndex",
+                                                                                                    typeof(int),
+                                                                                                    typeof(GeneralList));
 
         public static readonly DependencyProperty ListVisibilityProperty = DependencyProperty.Register("ListVisibility",
                                                                                                       typeof(Visibility),
@@ -102,5 +119,20 @@ namespace ErpDotNet.Wpf.UserControls.Lists
 
             listView.View = gv;
         }
+
+        #region OpenCard
+        public static readonly DependencyProperty OpenCardProperty =
+            DependencyProperty.Register(
+                "OpenCard",
+                typeof(ICommand),
+                typeof(GeneralList),
+                new UIPropertyMetadata(null));
+
+        public ICommand OpenCard
+        {
+            get { return (ICommand)GetValue(OpenCardProperty); }
+            set { SetValue(OpenCardProperty, value); }
+        }
+        #endregion
     }
 }
